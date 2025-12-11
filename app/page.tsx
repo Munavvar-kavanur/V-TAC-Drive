@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Database, Globe, Zap, Shield, Layout, Github } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
+import SpotlightCard from '@/components/SpotlightCard';
 
 export default function Home() {
   return (
@@ -66,6 +67,8 @@ export default function Home() {
           </div>
         </motion.div>
 
+
+
         {/* Feature Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-32 max-w-6xl w-full px-6"
@@ -100,12 +103,12 @@ export default function Home() {
 
 function FeatureCard({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
-    <div className="group p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] transition-all hover:-translate-y-1 text-left">
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 flex items-center justify-center mb-6 border border-white/5 group-hover:scale-110 transition-transform">
+    <SpotlightCard className="h-full p-8 hover:-translate-y-1 transition-transform duration-300">
+      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 flex items-center justify-center mb-6 border border-white/5">
         <Icon className="w-6 h-6 text-indigo-400" />
       </div>
       <h3 className="text-xl font-semibold mb-3 text-slate-100">{title}</h3>
       <p className="text-slate-400 leading-relaxed">{desc}</p>
-    </div>
+    </SpotlightCard>
   );
 }
